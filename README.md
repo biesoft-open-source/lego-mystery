@@ -19,7 +19,12 @@ To run the applications locally you need to setup environment with the following
 $ yarn install
 ```
 
-4. Setup environment variables. `MOCK_API_BASE_URL` is not implemented and call to this endpoint will throw an error (settled state is handled). `REBRICKABLE_API_KEY` can be generated in user settings [link available on this page](https://rebrickable.com/api/). **Important!** Registration in `rebrickable.com` is required.
+4. Setup environment variables:
+- `MOCK_API_BASE_URL` is not implemented and call to this endpoint will throw an error (settled state is handled).
+- `REBRICKABLE_API_KEY` can be generated in user settings [link available on this page](https://rebrickable.com/api/).
+
+**Important!** Registration in `rebrickable.com` is required.
+
 5. Run the command in the terminal to start the server:
 
 ```sh
