@@ -7,9 +7,9 @@ import { InterpreterFrom } from 'xstate';
 import { rootMachine } from './rootMachine';
 import { routes } from '../../constants';
 
-const RootMachineContext = createContext<InterpreterFrom<
-  typeof rootMachine
-> | null>(null);
+const RootContext = createContext<InterpreterFrom<typeof rootMachine> | null>(
+  null
+);
 
 interface Props {
   children: React.ReactNode;
@@ -27,14 +27,12 @@ export const RootProvider = ({ children }: Props) => {
   });
 
   return (
-    <RootMachineContext.Provider value={rootService}>
-      {children}
-    </RootMachineContext.Provider>
+    <RootContext.Provider value={rootService}>{children}</RootContext.Provider>
   );
 };
 
 export const useRootContext = () => {
-  const rootServices = useContext(RootMachineContext);
+  const rootServices = useContext(RootContext);
 
   if (!rootServices) {
     throw new Error('Missing context provider');
